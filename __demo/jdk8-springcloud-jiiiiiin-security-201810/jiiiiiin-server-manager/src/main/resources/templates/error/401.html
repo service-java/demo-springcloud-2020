@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>401</title>
+</head>
+<body>
+    <h1>401 认证错误 :(</h1>
+    <p th:text="${#httpServletRequest.getAttribute('SPRING_SECURITY_LAST_EXCEPTION')}"></p>
+</body>
+</html>

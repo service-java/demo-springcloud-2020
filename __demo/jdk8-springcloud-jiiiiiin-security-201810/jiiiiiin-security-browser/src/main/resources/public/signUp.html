@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <title>注册 - 默认</title>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style>
+        [v-cloak] {
+            display: none !important;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .from {
+            margin-top: 150px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app" v-cloak>
+
+    <el-row class="from">
+        <el-col :span="8">&nbsp;</el-col>
+        <el-col :span="8">
+
+            <h3 class="title">默认注册页面</h3>
+            <p>这是系统注册页面，请配置 `jiiiiiin.security.browser.signUpUrl` 属性来设置自己的注册页</p>
+
+
+        </el-col>
+        <el-col :span="8">&nbsp;</el-col>
+    </el-row>
+
+</div>
+
+<!-- 生产环境版本，优化了尺寸和速度 -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/js/common.js"></script>
+
+<script>
+    new Vue({
+        el: '#app'
+    })
+</script>
+</body>
+</html>

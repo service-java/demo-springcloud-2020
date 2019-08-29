@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.jiiiiiin.module.common.mapper.mngauth.ResourceMapper">
+
+    <!-- 开启二级缓存 -->
+    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.jiiiiiin.module.common.entity.mngauth.Resource">
+        <result column="id" property="id"/>
+        <result column="code" property="code"/>
+        <result column="pid" property="pcode"/>
+        <result column="name" property="name"/>
+        <result column="path" property="path"/>
+        <result column="url" property="url"/>
+        <result column="url" property="url"/>
+        <result column="method" property="method"/>
+        <result column="levels" property="levels"/>
+        <result column="type" property="type"/>
+        <result column="status" property="status"/>
+        <result column="channel" property="channel"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        pid, name, icon, path, url, method, num, levels, type, status, channel
+    </sql>
+
+    <sql id="selectByRoleId_Column_List">
+        r.id,
+        r.pid, r.name, r.icon, r.path, r.url, r.method, r.num, r.levels, r.type
+    </sql>
+
+    <select id="selectByRoleId" resultType="cn.jiiiiiin.module.common.entity.mngauth.Resource" useCache="false">
+        select
+        <include refid="selectByRoleId_Column_List"/>
+        from mng_resource r
+        left join mng_role_resource mrr on mrr.resource_id = r.id
+        where
+        mrr.role_id = #{roleId}
+        and r.status = 1
+        and r.channel = #{channel}
+        order by levels,num asc
+    </select>
+
+</mapper>

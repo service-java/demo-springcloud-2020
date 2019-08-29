@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.jiiiiiin.module.common.mapper.mngauth.RoleMapper">
+
+    <!-- 开启二级缓存 -->
+    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.jiiiiiin.module.common.entity.mngauth.Role">
+        <result column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="authority_name" property="authorityName" />
+        <result column="num" property="num" />
+        <result column="pid" property="pid" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        name
+    </sql>
+
+    <insert id="relationResource">
+        insert into mng_role_resource(resource_id, role_id) values
+        <foreach collection="resources" item="item" index="index"
+                 separator=",">
+            (#{item.id}, #{id})
+        </foreach>
+    </insert>
+
+</mapper>

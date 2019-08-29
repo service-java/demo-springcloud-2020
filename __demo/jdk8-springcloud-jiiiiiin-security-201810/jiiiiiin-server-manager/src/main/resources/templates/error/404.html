@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>404</title>
+</head>
+<body>
+    <h1>404 你访问的资源不存在 :(</h1>
+    <p th:text="${#httpServletRequest.getAttribute('SPRING_SECURITY_LAST_EXCEPTION')}"></p>
+</body>
+</html>

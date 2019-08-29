@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,admin-scalable=no">
+    <title>成功退出登录 - 默认</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style>
+        [v-cloak] {
+            display: none !important;
+        }
+
+        .from {
+            margin-top: 150px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app" v-cloak>
+
+    <el-row class="from">
+        <el-col :span="8">&nbsp;</el-col>
+        <el-col :span="8">
+            <el-card class="box-card">
+                <h2>你已经安全退出</h2>
+                <p>此页面将在{{time}}秒后跳转到登录页</p>
+            </el-card>
+
+        </el-col>
+        <el-col :span="8">&nbsp;</el-col>
+    </el-row>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+<script>
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                time: 3
+            }
+        },
+        mounted() {
+            console.warn('安全模块默认的退出成功提示页面,请通过`jiiiiiin.security.browser.signOutUrl`配置自己的页面URL')
+            setInterval(() => {
+                --this.time
+                window.location.href = "/signIn.html"
+            }, 3000);
+        }
+    })
+</script>
+</body>
+</html>
