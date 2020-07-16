@@ -11,7 +11,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>lab-55-mapstruct-demo</module>
-        <module>lab-55-mapstruct-demo-lombok</module>
+        <module>lab-55-mapstruct-demo-lombok@simple</module>
     </modules>
 
 
