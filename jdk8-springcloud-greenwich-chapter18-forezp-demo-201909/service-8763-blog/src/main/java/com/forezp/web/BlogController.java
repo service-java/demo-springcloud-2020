@@ -1,7 +1,7 @@
 package com.forezp.web;
 
 import com.forezp.annotation.SysLogger;
-import com.forezp.dto.RespDTO;
+import com.forezp.dto.ResponseVO;
 import com.forezp.entity.Blog;
 import com.forezp.exception.CommonException;
 import com.forezp.exception.ErrorCode;
@@ -28,21 +28,21 @@ public class BlogController {
     @PreAuthorize("hasRole('USER')")
     @PostMapping("")
     @SysLogger("postBlog")
-    public RespDTO postBlog(@RequestBody Blog blog){
+    public ResponseVO postBlog(@RequestBody Blog blog){
         //字段判读省略
        Blog blog1= blogService.postBlog(blog);
-       return RespDTO.onSuc(blog1);
+       return ResponseVO.onSuc(blog1);
     }
 
     @ApiOperation(value = "根据用户id获取所有的blog", notes = "根据用户id获取所有的blog")
     @PreAuthorize("hasAuthority('ROLE_USER')")
     @GetMapping("/{username}")
     @SysLogger("getBlogs")
-    public RespDTO getBlogs(@PathVariable String  username){
+    public ResponseVO getBlogs(@PathVariable String  username){
         //字段判读省略
         if(UserUtils.isMyself(username)) {
             List<Blog> blogs = blogService.findBlogs(username);
-            return RespDTO.onSuc(blogs);
+            return ResponseVO.onSuc(blogs);
         }else {
             throw new CommonException(ErrorCode.TOKEN_IS_NOT_MATCH_USER);
         }
@@ -52,7 +52,7 @@ public class BlogController {
     @PreAuthorize("hasAuthority('ROLE_USER')")
     @GetMapping("/{id}/detail")
     @SysLogger("getBlogDetail")
-    public RespDTO getBlogDetail(@PathVariable Long id){
-        return RespDTO.onSuc(blogService.findBlogDetail(id));
+    public ResponseVO getBlogDetail(@PathVariable Long id){
+        return ResponseVO.onSuc(blogService.findBlogDetail(id));
     }
 }

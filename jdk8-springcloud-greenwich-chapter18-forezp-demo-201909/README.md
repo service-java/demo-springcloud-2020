@@ -29,10 +29,11 @@ RABBIT_ADDRESSES=localhost java -jar zipkin.jar
 ```
 gateway
 uaa
-user
 
 admin
 monitor
+
+user
 blog
 ```
 
@@ -56,8 +57,14 @@ INSERT INTO user_role VALUES('13', '1')
 
 # 常见问题 @faq
 
-- 启动网关5000和user服务8762, 但不启动uaa9999
+- 关于uaa
 
 ```
+1) 启动gateway5000和user服务8762, 但不启动uaa9999
 会获取不到token
+
+但已获取的token后, 关掉uaa也可以正常访问userInfo 
+
+2) 启动uaa9999和user服务8762, 但不启动gateway5000
+连不上5000, 拒绝连接
 ```

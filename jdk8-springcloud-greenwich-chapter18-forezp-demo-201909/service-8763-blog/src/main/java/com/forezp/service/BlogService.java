@@ -4,7 +4,7 @@ package com.forezp.service;
 import com.forezp.client.UserServiceClient;
 import com.forezp.dao.BlogDao;
 import com.forezp.dto.BlogDetailDTO;
-import com.forezp.dto.RespDTO;
+import com.forezp.dto.ResponseVO;
 import com.forezp.entity.Blog;
 import com.forezp.entity.User;
 import com.forezp.exception.CommonException;
@@ -45,7 +45,7 @@ public class BlogService {
         if (null == blog) {
             throw new CommonException(ErrorCode.BLOG_IS_NOT_EXIST);
         }
-        RespDTO<User> respDTO = userServiceClient.getUser(UserUtils.getCurrentToken(), blog.getUsername());
+        ResponseVO<User> respDTO = userServiceClient.getUser(UserUtils.getCurrentToken(), blog.getUsername());
         if (respDTO==null) {
             throw new CommonException(ErrorCode.RPC_ERROR);
         }

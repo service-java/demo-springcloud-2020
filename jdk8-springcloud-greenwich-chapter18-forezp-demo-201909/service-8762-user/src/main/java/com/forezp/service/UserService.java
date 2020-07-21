@@ -3,7 +3,7 @@ package com.forezp.service;
 import com.forezp.client.AuthServiceClient;
 import com.forezp.dao.UserDao;
 import com.forezp.dto.LoginDTO;
-import com.forezp.dto.RespDTO;
+import com.forezp.dto.ResponseVO;
 import com.forezp.entity.JWT;
 import com.forezp.entity.User;
 import com.forezp.exception.CommonException;
@@ -30,7 +30,7 @@ public class UserService {
     public User getUserInfo(String username){
         return userDao.findByUsername(username);
     }
-    public RespDTO login(String username , String password){
+    public ResponseVO login(String username , String password){
        User user= userDao.findByUsername(username);
        if(null==user){
            throw new CommonException(ErrorCode.USER_NOT_FOUND);
@@ -47,6 +47,6 @@ public class UserService {
         LoginDTO loginDTO=new LoginDTO();
         loginDTO.setUser(user);
         loginDTO.setToken(jwt.getAccess_token());
-        return RespDTO.onSuc(loginDTO);
+        return ResponseVO.onSuc(loginDTO);
     }
 }

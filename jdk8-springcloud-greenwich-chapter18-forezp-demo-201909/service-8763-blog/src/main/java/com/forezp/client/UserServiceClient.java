@@ -1,7 +1,7 @@
 package com.forezp.client;
 
 import com.forezp.client.hystrix.UserServiceHystrix;
-import com.forezp.dto.RespDTO;
+import com.forezp.dto.ResponseVO;
 import com.forezp.entity.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 public interface UserServiceClient {
 
     @PostMapping(value = "/user/{username}")
-    RespDTO<User> getUser(@RequestHeader(value = "Authorization") String token, @PathVariable("username") String username);
+    ResponseVO<User> getUser(@RequestHeader(value = "Authorization") String token, @PathVariable("username") String username);
 }
 
 

@@ -1,7 +1,7 @@
 package com.forezp.client.hystrix;
 
 import com.forezp.client.UserServiceClient;
-import com.forezp.dto.RespDTO;
+import com.forezp.dto.ResponseVO;
 import com.forezp.entity.User;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class UserServiceHystrix implements UserServiceClient {
 
     @Override
-    public RespDTO<User> getUser(String token, String username) {
+    public ResponseVO<User> getUser(String token, String username) {
         System.out.println(token);
         System.out.println(username);
         return null;
