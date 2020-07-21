@@ -60,6 +60,8 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
 
 # 4) 数据库插入一条数据后, 重新获取Token, 再次尝试登录 --> ok
 INSERT INTO user_role VALUES('13', '1')
+
+登录注册与获取信息等操作会持久化到日志的数据库
 ```
 
 # 常见问题 @faq
