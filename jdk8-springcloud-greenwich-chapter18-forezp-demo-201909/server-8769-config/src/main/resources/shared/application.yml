@@ -40,7 +40,7 @@ management:
     health:
       show-details: ALWAYS
 
-
+# feign中集成的hystrix默认是不开启的, 需要打开
 feign:
   hystrix:
     enabled: true

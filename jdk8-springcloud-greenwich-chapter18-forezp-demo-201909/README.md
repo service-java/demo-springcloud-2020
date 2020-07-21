@@ -37,6 +37,13 @@ user
 blog
 ```
 
+- 访问
+    - http://localhost:8761/ --> 除了config-server与自身
+    - http://localhost:8762/swagger-ui.html#/
+    - http://localhost:8763/swagger-ui.html#/
+    - http://localhost:9411/zipkin/ --> blog-service服务依赖了user-service服务
+    - http://localhost:9998/ --> 账号密码: admin/admin
+
 - 测试
 
 ```bash
