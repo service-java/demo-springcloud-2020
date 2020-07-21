@@ -10,16 +10,16 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>blog-service</module>
-        <module>config-server</module>
-        <module>eureka-server</module>
-        <module>gateway-service</module>
-        <module>user-service</module>
-        <module>monitor-service</module>
-        <module>uaa-service</module>
-        <module>log-service</module>
+        <module>blog-service-8763</module>
+        <module>config-server-8769</module>
+        <module>eureka-server-8761</module>
+        <module>gateway-service-5000</module>
+        <module>user-service-8762</module>
+        <module>monitor-service-8766</module>
+        <module>uaa-service-9999</module>
+        <module>log-service-9997</module>
         <module>common</module>
-        <module>admin-service</module>
+        <module>admin-service-9998</module>
     </modules>
 
     <parent>
