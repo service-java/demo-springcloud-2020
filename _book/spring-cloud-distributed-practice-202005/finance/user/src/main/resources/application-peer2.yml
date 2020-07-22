@@ -1,0 +1,12 @@
+# 微服务端口
+server:
+  port: 6002
+
+# 定义微服务实例信息
+eureka:
+  instance:
+    metadata-map:
+      # 自定义元数据版本号（version）为v2
+      version: v2
+      #  0-代表正常发布，1-代表灰色发布
+      gray-release: 1

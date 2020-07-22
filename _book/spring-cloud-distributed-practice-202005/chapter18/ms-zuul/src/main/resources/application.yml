@@ -1,0 +1,38 @@
+secret:
+  # 3DES加密和解密阴匙
+  key: secret
+server:
+  servlet:
+    # 拦截路径
+    context-path: /ms
+spring:
+  application:
+    name: zuul
+  redis:
+    # Redis服务器
+    host: 192.168.224.138
+    # 端口
+    port: 6379
+    # 密码
+    password: 123456
+
+# 服务注册
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka,http://localhost:1002/eureka
+
+# Zuul的配置
+zuul:
+  # 路由配置
+  routes:
+    # 路由到微服务
+    client1-service:
+      # 请求拦截路径配置（使用ANT风格）
+      path: /client1/**
+      service-id: client1
+    client2-service:
+      # 请求拦截路径配置（使用ANT风格）
+      path: /client2/**
+      service-id: client2
+

@@ -1,0 +1,16 @@
+# 修改内嵌Tomcat端口为8001
+#server:
+#  port: 8001
+
+#spring:
+#  profiles:
+#    active: peer1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # 暴露的端点，“*”代表全部暴露
+        include: "*"
+        # 不暴露的端点
+        exclude: env

@@ -1,0 +1,30 @@
+# 聚合配置
+turbine:
+  # 配置所需监控的微服务
+  app-config: MS-PRODUCT, MS-FUND, MS-ZUUL
+  # 表达式（注意不是字符串）
+  cluster-name-expression: new String("default")
+  # 是否驱动同服务器不同端口
+  combine-host-port: true
+
+# 服务发现
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka,http://localhost:1002/eureka
+
+# 端口
+server:
+  port: 4001
+# 服务名称
+spring:
+  application:
+    name: ms-dashboard
+
+# Actuator端点配置
+management:
+  endpoints:
+    web:
+      exposure:
+        # 暴露Actuator端点
+        include: '*'

@@ -1,0 +1,59 @@
+spring:
+  application:
+    name: ms-product
+  cache:
+    cache-names: redis-cache
+    type: redis
+  redis:
+    # Redis������
+    host: 192.168.224.134
+    # �˿�
+    port: 6379
+    # ����
+    password: 123456
+    jedis:
+      # ���ӳ�����
+      pool:
+        # ���������
+        max-active: 20
+        # ���ȴ�ʱ�䣨��λ���룩
+        max-wait: 2000
+        # ��С����������
+        min-idle: 5
+        # �������������
+        max-idle: 15
+  sleuth:
+    sampler: # 样本配置
+      # 百分比，默认为0.1
+      probability: 1.0
+      # 速率，每秒30次追踪
+      # rate: 30
+  zipkin:
+    base-url: http://localhost:9001
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka,http://localhost:1002/eureka
+
+secret:
+  key: ms-secret-key
+mybatis:
+  # ����ӳ���ļ�
+  mapper-locations: classpath:/mybatis/*.xml
+  # ����POJO�����Ա����ɨ��
+  type-aliases-package: com.spring.cloud.ms.common.pojo
+server:
+  port: 5001
+
+# Actuator端点暴露
+management:
+  endpoints:
+    web:
+      exposure:
+        # 配置Actuator暴露那些端点  ②
+        include: '*'
+
+database:
+  center:
+    id: 1001

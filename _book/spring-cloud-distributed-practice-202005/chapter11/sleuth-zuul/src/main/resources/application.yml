@@ -1,0 +1,30 @@
+# 定义Spring应用名称，它是一个微服务的名称，一个微服务可拥有多个实例
+spring:
+  application:
+    name: sleuth-zuul
+  sleuth:
+    sampler:
+      # 百分比，默认为0.1
+      probability: 1.0
+      # 速率，每秒30个跟踪点
+      # rate: 30
+  zipkin:
+    base-url: http://localhost:5001
+
+# 注册到服务治理中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka,http://localhost:1002/eureka
+# Zuul路由配置
+zuul:
+  routes:
+    provider:
+      path: /provider/**
+      service-id: sleuth-provider
+    consumer:
+      path: /consumer/**
+      service-id: sleuth-consumer
+
+server:
+  port: 8001

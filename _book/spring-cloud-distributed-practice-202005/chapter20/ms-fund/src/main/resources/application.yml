@@ -1,0 +1,66 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka,http://localhost:1002/eureka
+spring:
+  application:
+    name: ms-fund
+  sleuth:
+    sampler: # 样本配置
+      # 百分比，默认为0.1
+      probability: 1.0
+      # 速率，每秒30次追踪
+      # rate: 30
+  zipkin:
+    base-url: http://localhost:9001
+
+server:
+  port: 6001
+
+logging:
+  level:
+    root: debug
+
+secret:
+  key: ms-secret-key
+
+# OpenFeign1配置
+feign:
+  client:
+    config:
+      # “ms-product”代表用户微服务的Feign客户端
+      ms-product:
+        # 连接远端服务器超时时间(单位毫秒)
+        connectTimeout: 5000
+        # 读取请求超时时间(单位毫秒)
+        readTimeout: 5000
+        # 配置拦截器
+        request-interceptors:
+          - com.spring.cloud.ms.fund.feign.interceptor.FeignAuthInterceptor
+  hystrix:
+    enabled: false
+
+MS-PRODUCT:
+  ribbon:
+    # 连接超时
+    ConnectTimeout: 1000
+    # 请求超时
+    ReadTimeout: 3000
+    # 最大连接数
+    MaxTotalHttpConnections: 200
+    # 每台服务提供者最大连接数
+    MaxConnectionsPerHost: 50
+    # 是否所有操作（操作超时或者读超时）都进行重试
+    OkToRetryONAllOperations: false
+    # 重试其他实例的最大重试次数，不包括首次所选的server
+    MaxAutoRetriesNextServer: 2
+    # 同一实例最大重试次数，不包括首次调用
+    MaxAutoRetries : 1
+
+# Actuator端点暴露
+management:
+  endpoints:
+    web:
+      exposure:
+        # 配置Actuator暴露那些端点  ②
+        include: '*'

@@ -1,0 +1,2 @@
+server:
+  port: 5001 #修改内嵌Tomcat端口为5001

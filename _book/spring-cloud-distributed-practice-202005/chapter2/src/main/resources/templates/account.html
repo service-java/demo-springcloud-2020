@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>REST风格测试</title>
+    <!-- 引入jQuery-->
+    <script type="text/javascript"
+            src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        function get() {
+            $.get("./1", {}, function (result) {
+                alert(JSON.stringify(result));
+            })
+        }
+
+        function post() {
+            // 向后端提交的账户对象
+            var account = {
+                accountName: "account_name_x",
+                balance: 12345678.90,
+                note: "note_x"
+            }
+            $.post({ // POST请求
+                url: "./../account",
+                // 设置请求体为JSON类型
+                contentType: "application/json",
+                // 提交请求体
+                data: JSON.stringify(account),
+                success: function (result) {
+                    alert(JSON.stringify(result));
+                }
+            });
+        }
+
+        function put() {
+            var account = {
+                id: 8765,
+                accountName: "account_name_x",
+                balance: 12345678.90,
+                note: "note_x"
+            }
+            $.ajax({
+                url: "./../account",
+                // 定义为HTTP PUT请求
+                type: "PUT",
+                contentType: "application/json",
+                data: JSON.stringify(account),
+                success: function (result) {
+                    alert(JSON.stringify(result));
+                }
+            });
+        }
+
+        function del() {
+            $.ajax({
+                type: "DELETE",
+                url: "./../account/897",
+                success: function (result) {
+                    alert(JSON.stringify(result));
+                }
+            });
+        }
+
+        function post2() {
+            // 向后端提交的账户对象
+            var account = {
+                accountName: "account_name_x",
+                balance: 12345678.90,
+                note: "note_x"
+            }
+            var result = $.post({ // POST请求
+                url: "./../account2",
+                // 设置请求体为JSON类型
+                contentType: "application/json",
+                // 提交请求体
+                data: JSON.stringify(account),
+                success: function (result, status, xhr) {
+                    // 获取响应码
+                    var status = xhr.status;
+                    // 获取响应头消息
+                    var success = xhr.getResponseHeader("success");
+                    // 判断响应头成功标志
+                    if (success === "true") { // 成功
+                        alert(JSON.stringify(result));
+                    } else {  // 请求错误处理
+                        // 请求头错误消息
+                        var message = xhr.getResponseHeader("message");
+                        alert("success：" + success + "， message：" + message);
+                    }
+                }
+            });
+        }
+
+        post2();
+    </script>
+</head>
+<body>
+</body>
+</html>

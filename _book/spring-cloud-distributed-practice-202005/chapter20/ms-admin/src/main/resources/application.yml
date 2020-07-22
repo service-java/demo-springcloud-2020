@@ -1,0 +1,19 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka,http://localhost:1002/eureka
+
+server:
+  port: 3001
+spring:
+  application:
+    # 应用名称
+    name: ms-admin
+  security:
+    user:
+      # 用户名
+      name: admin
+      # 密码
+      password: admin123
+      # 角色
+      roles: ADMIN

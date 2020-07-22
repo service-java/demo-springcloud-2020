@@ -1,0 +1,55 @@
+# 定义Spring应用名称，它是一个微服务的名称，一个微服务可拥有多个实例
+spring:
+  application:
+    name: sleuth-zipkin
+# **** 数据库配置 ****#
+#  datasource:
+#    # 数据库URL
+#    url: jdbc:mysql://localhost:3306/spring_cloud_chapter11?serverTimezone=GMT%2B8
+#    driver-class-name: com.mysql.jdbc.Driver
+#    # 登录用户
+#    username: root
+#    # 登录密码
+#    password: 123456
+#    # 最小空闲数
+#    tomcat:
+#      min-idle: 10
+#      # 最大活动数
+#      max-active: 50
+#      # 最大空闲数
+#      max-idle: 20
+
+## zipkin配置
+zipkin:
+  storage:
+#    # mysql作为存储类型
+#    type: mysql
+    # 使用ElasticSearch作为存储类型
+    type: elasticsearch
+    # ElasticSearch配置
+    elasticsearch:
+      # 索引
+      index: zipkin
+      # 最大请求数
+      max-requests: 64
+      # 索引分片数
+      index-shards: 5
+      # 索引复制数
+      index-replicas: 1
+      # 服务器和端口
+      hosts: localhost:9200
+
+# 服务治理中心相互注册
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka,http://localhost:1002/eureka
+management:
+  metrics:
+    web:
+      server:
+        # 取消自动定时，不设置为false可能时间序列数量增长过大，导致异常
+        auto-time-requests: false
+
+server:
+  port: 5001

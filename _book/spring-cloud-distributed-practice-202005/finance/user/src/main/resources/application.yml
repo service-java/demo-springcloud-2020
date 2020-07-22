@@ -1,0 +1,37 @@
+# 请求URL指向Eureka服务治理中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone : http://localhost:5001/eureka/,http://localhost:5002/eureka/
+  instance:
+    # 服务实例主机名称
+    hostname: 192.168.80.1
+
+## 微服务端口
+#server:
+#  port: 6001
+
+
+
+# Spring应用名称（微服务名称）
+spring:
+  application:
+    name: user
+  profiles:
+    # 当配置为“peer1”时选择application-peer1.yml作为配置文件；
+    # 当配置为“peer2”时选择application-peer2.yml作为配置文件。
+    active: peer2
+
+# resilience4j配置
+resilience4j:
+  # 限速器注册机
+  ratelimiter:
+    limiters:
+      # 名称为“user”的限速器
+      user:
+        # 时间戳内限制通过的请求数，默认为50
+        limitForPeriod: 3
+        # 配置时间戳（单位毫秒），默认值为500 ns
+        limitRefreshPeriodInMillis: 5000
+        # 超时时间
+        timeoutInMillis: 10

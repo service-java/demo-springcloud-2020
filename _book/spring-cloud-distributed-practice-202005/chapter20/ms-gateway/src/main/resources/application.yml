@@ -1,0 +1,76 @@
+# resilience4j 限速器（ratelimiter）配置
+resilience4j:
+  # 限速器注册机
+  ratelimiter:
+    limiters:
+      # 名称为“commonLimiter”的限速器
+      commonLimiter:
+        # 时间戳内限制通过的请求数，默认50
+        limitForPeriod: 2000
+        # 配置时间戳，默认值为500纳秒。
+        limitRefreshPeriodInMillis: 1000
+        # 超时时间
+        timeoutInMillis: 100
+  # 配置断路器，配置的断路器会注册到断路器注册机（CircuitBreakerRegistry）中
+  circuitbreaker:
+    backends:
+      # 名称为“test”的断路器
+      test:
+        # 当断路器为关闭状态时，监测环形数组多少位信息，
+        # 才重新分析请求结果来确定断路器的状态是否改变
+        ring-Buffer-size-in-closed-state: 10
+        # 当断路器为打开状态时，监测环形数组多少位信息，
+        # 才重新分析请求结果来确定断路器的状态是否改变
+        ring-buffer-size-in-half-open-state: 10
+        # 当断路器为打开状态时，等待多少时间（单位毫秒），
+        # 转变为半打开状态，默认为60秒
+        wait-duration-in-open-state: 5000
+        # 当请求失败比例达到30%时，打开断路器，默认为50%
+        failure-rate-threshold: 30
+        # 是否注册metrics监控
+        register-health-indicator: true
+
+# 服务器端口
+server:
+  port: 2001
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka,http://localhost:1002/eureka
+
+# 路由配置
+spring:
+  application:
+    name: ms-gateway
+  redis:
+    # Redis服务器地址
+    host: 192.168.224.138
+    # Redis密码
+    password: 123456
+    # Jedis客户端
+    jedis:
+      # 连接池配置
+      pool:
+        # 最大活动连接数
+        max-active: 20
+        # 最大等待时间（单位毫秒）
+        max-wait: 2000
+        # 最小闲置连接数
+        min-idle: 5
+        # 最大闲置连接数
+        max-idle: 15
+  cloud:
+    gateway:
+      # 开始配置路径
+      routes:
+        # 路径匹配
+        - id: demo
+          # 转发URI
+          uri: http://localhost:3001/
+          filters:
+            - StripPrefix=1
+          # 断言配置
+          predicates:
+            # 请求方法为GET
+            - Path=/demo/**

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>测试Thymeleaf</title>
+</head>
+<body>
+<form action="./commit" method="post">
+    <p>
+        名称：<input id="name" name="name" type="text" value="" />
+    </p>
+    <p>
+        密码：<input id="describe" name="describe" type="text" value="" />
+    </p>
+    <p>
+        <input type="submit" value="提交"/>
+    </p>
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+</form>
+</body>
+</html>

@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: ms-demo
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka,http://localhost:1002/eureka
+
+server:
+  port: 3001

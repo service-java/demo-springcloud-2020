@@ -1,0 +1,3 @@
+# 修改内嵌Tomcat端口为8001
+server:
+  port: 8001

@@ -1,0 +1,133 @@
+# 请求URL指向Eureka服务治理中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone : http://localhost:5001/eureka/,http://localhost:5002/eureka/
+  instance:
+    # 实例服务器名称
+    hostname: 192.168.80.1
+
+# Spring应用名称（微服务名称）
+spring:
+  application:
+    name: fund
+  profiles:
+    # 当配置为“peer1”时选择application-peer1.yml作为配置文件；
+    # 当配置为“peer2”时选择application-peer2.yml作为配置文件。
+    active: peer1
+
+#feign:
+#  client:
+#    config:
+#      # “user”代表用户微服务的OpenFeign客户端
+#      user:
+#        # 连接远程服务器超时时间（单位毫秒）
+#        connectTimeout: 5000
+#        # 读取请求超时时间（单位毫秒）
+#        readTimeout: 5000
+#        # 配置拦截器
+#        request-interceptors:
+#          - com.spring.cloud.fund.facade.interceptor.UserInterceptor
+feign:
+  # Hystrix配置
+  hystrix:
+    # 是否将OpenFeign调度封装为Hystrix命令，然后通过断路器执行，
+    # 默认值为false（旧版本为true）
+    enabled: false
+  # 压缩
+  compression:
+    # 请求
+    request:
+      # 是否支持请求GZIP压缩，默认值为false
+      enabled: true
+      # GZIP压缩什么类型，默认值为text/xml,application/xml,application/json
+      mime-types: text/xml,application/xml,application/json
+      # 当请求内容大于多少阈值后，进行GZIP压缩请求，默认值为2048（单位KB）
+      min-request-size: 4096
+    # 响应
+    response:
+      # 请求响应结果是否允许压缩
+      enabled: true
+#  httpclient:
+#    # 是否启用Apache HTTP Client作为底层连接（Ribbon的默认方法）
+#    enabled: true
+#    # 尝试连接超时时间
+#    connection-timeout: 2000
+#    # 是否禁止SSL协议验证
+#    disable-ssl-validation: false
+#    # 连接重新尝试
+#    connection-timer-repeat: 2000
+#    # 默认最大连接数
+#    max-connections: 100
+#    # 单个调用最大连接数
+#    max-connections-per-route: 30
+#    # HttpClient的存活时间，默认为900，单位通过time-to-live-unit配置
+#    time-to-live: 500
+#    # HttpClient的存活时间单位，默认为秒（second）
+#    time-to-live-unit: milliseconds
+#    # 当HTTP返回码为3xx（重定向）时，是否执行重定向操作，默认为true
+#    follow-redirects: false
+  okhttp:
+    # 启用Ok HTTP Client，默认值为false
+    enabled: true
+  httpclient:
+    # 是否启用Apache HTTP Client作为底层连接
+    enabled: false
+
+logging:
+  level:
+    root: DEBUG
+
+# Ribbon配置
+ribbon:
+  # 连接服务器超时时间（单位毫秒）
+  connectTimeout: 3000
+  # 调用超时时间（单位毫秒）
+  readTimeout: 6000
+
+# Hystrix配置
+hystrix:
+  # 自动配置一个Hystrix并发策略插件的hook，
+  # 这个hook会将SecurityContext从主线程传输到Hystrix的命令。
+  shareSecurityContext: true
+  command:
+    default:
+      execution:
+        timeout:
+          # 是否启用Hystrix超时时间
+          enable: true
+        isolation:
+          thread:
+            # 配置Hystrix断路器超时时间（单位毫秒）
+            timeoutInMilliseconds: 5000
+
+resilience4j:
+  # 配置断路器
+  circuitbreaker:
+    backends:
+      # 名称为“user”的断路器
+      user:
+        # 当断路器为关闭状态时，监测环形数组多少位信息，
+        # 才重新分析请求结果来确定是否改变断路器的状态
+        ringBufferSizeInClosedState: 10
+        # 当断路器为打开状态时，监测环形数组多少位信息，
+        # 才重新分析请求结果来确定是否改变断路器的状态
+        ringBufferSizeInHalfOpenState: 10
+        # 当断路器为打开状态时，等待多少时间，转变为半打开状态，默认为60秒
+        wait-duration-in-open-state:
+          seconds: 5
+        # 当请求失败次数达到30%时，打开断路器，默认为50%
+        failureRateThreshold: 30
+        # 是否注册metrics监控
+        registerHealthIndicator: true
+  # 限速器
+  ratelimiter:
+    limiters:
+      # 名称为“user”的限速器
+      user:
+        # 时间戳内限制通过的请求数，默认为50
+        limitForPeriod: 30
+        # 配置时间戳，默认值为500 ns
+        limitRefreshPeriodInMillis: 5000
+        # 超时时间
+        timeoutInMillis: 5000

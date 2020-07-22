@@ -1,0 +1,119 @@
+# 请求URL指向Eureka服务治理中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone : http://localhost:5001/eureka/,http://localhost:5002/eureka/
+  instance:
+    # 实例服务器名称
+    hostname: 192.168.80.1
+    # 配置产品微服务的 metadata-map，键值对为：cluster->product
+    metadata-map:
+      cluster: product
+
+# Spring应用名称（微服务名称）
+spring:
+  application:
+    name: product
+  profiles:
+    # 当配置为“peer1”时选择application-peer1.yml作为配置文件；
+    # 当配置为“peer2”时选择application-peer2.yml作为配置文件。
+    active: peer1
+#
+#FUND: # 代表只对资金微服务执行这样的配置
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.BestAvailableRule
+#    NFLoadBalancerPingClassName: com.netflix.loadbalancer.PingUrl
+#    # 连接超时时间，单位毫秒
+#    ConnectTimeout: 1000
+#    # 请求超时时间，单位毫秒
+#    ReadTimeout: 3000
+#    # 最大连接数
+#    MaxTotalHttpConnections: 500
+#    # 每个服务提供者的最大连接数
+#    MaxConnectionsPerHost: 100
+#    # 是否所有操作都重试
+#    OkToRetryONAllOperations: false
+#    # 重试其他实例的最大重试次数，不包括首次所选的server
+#    MaxAutoRetriesNextServer: 2
+#    # 同一实例的最大重试次数，不包括首次调用
+#    MaxAutoRetries : 1
+#  eureka:
+#    # 不使用Eureka服务获取机制
+#    enabled: false
+#    # 自配置服务器列表
+#    listOfServers: http://localhost:7001,http://localhost:7002
+
+#ribbon:
+#  eager-load:
+#    # 是否启动饥渴加载？默认值为false
+#    enabled: true
+#    # 饥渴加载的微服务ID
+#    clients: user, product, fund
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # 暴露的端点，如果配置为“*”，则代表全部暴露
+        include : hystrix.stream,info,health
+        # 不暴露的端点
+        exclude: env
+
+resilience4j:
+  # 配置断路器，配置的断路器会注册到断路器注册机（CircuitBreakerRegistry）中
+  circuitbreaker:
+    backends:
+      # 名称为“user”的断路器
+      user:
+        # 当断路器为关闭状态时，监测环形数组多少位信息，
+        # 才重新分析请求结果来确定断路器的状态是否改变
+        ring-Buffer-size-in-closed-state: 10
+        # 当断路器为打开状态时，监测环形数组多少位信息，
+        # 才重新分析请求结果来确定断路器的状态是否改变
+        ring-buffer-size-in-half-open-state: 10
+        # 当断路器为打开状态时，等待多少时间（单位毫秒），
+        # 转变为半打开状态，默认为60秒
+        wait-duration-in-open-state: 5000
+        # 当请求失败比例达到30%时，打开断路器，默认为50%
+        failure-rate-threshold: 30
+        # 是否注册metrics监控
+        register-health-indicator: true
+      # 名称为“product”的断路器
+      product:
+        # 当断路器为关闭状态时，监测环形数组多少位信息，
+        # 才重新分析请求结果来确定断路器的状态是否改变
+        ring-Buffer-size-in-closed-state: 10
+        # 当断路器为打开状态时，监测环形数组多少位信息，
+        # 才重新分析请求结果来确定断路器的状态是否改变
+        ring-buffer-size-in-half-open-state: 10
+        # 当断路器为打开状态时，等待多少时间（单位毫秒），
+        # 转变为半打开状态，默认为60秒
+        wait-duration-in-open-state: 5000
+        # 当请求失败比例达到30%时，打开断路器，默认为50%
+        failure-rate-threshold: 30
+        # 是否注册metrics监控
+        register-health-indicator: true
+  # 限速器
+  ratelimiter:
+    # 配置限速器，配置的限速器会注册到限速器注册机（RateLimiterRegistry）中
+    limiters:
+      # 名称为“user”的限速器
+      user:
+        # 时间戳内限制通过的请求数，默认为50个
+        limitForPeriod: 60
+        # 配置时间戳（单位毫秒），默认值为500 ns
+        limitRefreshPeriodInMillis: 5000
+        # 超时时间（单位毫秒）
+        timeoutInMillis: 5000
+        # 是否注册监控指标
+        registerHealthIndicator: true
+        # 事件消费环形位缓冲区位数
+        eventConsumerBufferSize: 50
+      # 名称为“product”的限速器
+      product:
+        # 时间戳内限制通过的请求数，默认为50个
+        limitForPeriod: 30
+        # 配置时间戳（单位毫秒）。默认值为500 ns
+        limitRefreshPeriodInMillis: 3000
+        # 超时时间
+        timeoutInMillis: 5000

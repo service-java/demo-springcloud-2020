@@ -1,0 +1,27 @@
+# 请求URL指向Eureka服务治理中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone : http://localhost:5001/eureka/,http://localhost:5002/eureka/
+  instance:
+    # 实例服务器名称
+    hostname: 192.168.1.100
+
+# 微服务端口
+server:
+  port: 1001
+
+# Spring应用名称（微服务名称）
+spring:
+  application:
+    name: dashboard
+
+turbine:
+  # 配置聚合微服务名称
+  app-config: PRODUCT
+  # 表达式
+  cluster-name-expression: metadata["cluster"]
+  combine-host-port: true
+  # 集群名称列表
+  aggregator:
+    cluster-config: product

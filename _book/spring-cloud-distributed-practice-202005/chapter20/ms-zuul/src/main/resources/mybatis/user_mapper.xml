@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.cloud.ms.zuul.dao.UserDao">
+    <select id="getUser" resultType="user" parameterType="long">
+        SELECT id, user_name as userName, pwd as password, available, note from t_user where id = #{id}
+    </select>
+    <select id="getUserByUserName" resultType="user" parameterType="string">
+        SELECT id, user_name as userName, pwd as password, available, note from t_user where user_name= #{userName}
+    </select>
+</mapper>

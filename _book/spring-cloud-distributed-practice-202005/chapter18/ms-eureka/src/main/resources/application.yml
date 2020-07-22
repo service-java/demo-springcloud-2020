@@ -1,0 +1,11 @@
+# 配置服务名称
+spring:
+  application:
+    name: ms-eureka
+
+
+# 配置治理服务注册
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka,http://localhost:1002/eureka

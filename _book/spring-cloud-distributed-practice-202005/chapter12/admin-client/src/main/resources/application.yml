@@ -1,0 +1,23 @@
+spring:
+  application:
+    # 配置服务名称
+    name: admin-client
+#  boot:
+#    # Spring Boot Admin配置
+#    admin:
+#      client:
+#        # 服务器的注册地址 ①
+#        url: http://localhost:9001
+
+# Actuator端点暴露
+management:
+  endpoints:
+    web:
+      exposure:
+        # 配置Actuator暴露那些端点  ②
+        include: '*'
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka,http://localhost:1002/eureka

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+<form action="/login/page" method="post">
+    <p>
+        名称：<input id="username" name="username" type="text" value="" />
+    </p>
+    <p>
+        密码：<input id="password" name="password" type="password" value="" />
+    </p>
+    <p>
+        <input type="submit" value="登录"/>
+    </p>
+    <!--CSRF参数-->
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+</form>
+</body>
+</html>

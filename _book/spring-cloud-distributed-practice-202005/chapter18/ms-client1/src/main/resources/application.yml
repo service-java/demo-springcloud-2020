@@ -1,0 +1,29 @@
+secret:
+  # 3DES加密和解密阴匙
+  key: secret
+
+spring:
+  application:
+    name: client1
+
+# 服务发现配置
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka,http://localhost:1002/eureka
+  instance:
+    hostname: localhost
+
+# OpenFeign1配置
+feign:
+  client:
+    config:
+      # “client2”代表用户微服务的Feign客户端
+      client2:
+        # 连接远端服务器超时时间(单位毫秒)
+        connectTimeout: 5000
+        # 读取请求超时时间(单位毫秒)
+        readTimeout: 5000
+        # 配置拦截器
+        request-interceptors:
+          - com.spring.cloud.msclient1.feign.interceptor.FeignInterceptor

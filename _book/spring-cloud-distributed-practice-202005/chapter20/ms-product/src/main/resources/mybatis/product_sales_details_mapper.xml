@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.cloud.ms.product.dao.ProductSalesDetailsDao">
+    <insert id="insertProductSales" parameterType="productSalesDetails" >
+        insert into t_product_sales_details(id, xid, product_id, user_name, quantity, sale_date, note)
+        values (#{id}, #{xid}, #{productId}, #{userName}, #{quantity}, #{saleDate}, #{note})
+    </insert>
+</mapper>

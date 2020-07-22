@@ -1,0 +1,21 @@
+spring:
+  # 数据库配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_cloud_chapter18
+    password: 123456
+    username: root
+    driver-class-name: com.mysql.jdbc.Driver
+  # Redis配置
+  redis:
+    # Redis服务器
+    host: 192.168.224.138
+    # 端口
+    port: 6379
+    # 密码
+    password: 123456
+# MyBatis配置
+mybatis:
+  # 映射文件路径
+  mapper-locations: classpath:/mybatis/*
+  # 扫描别名
+  type-aliases-package: com.spring.cloud.security.po

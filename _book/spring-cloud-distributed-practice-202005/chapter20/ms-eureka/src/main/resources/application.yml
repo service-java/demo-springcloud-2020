@@ -1,0 +1,10 @@
+spring:
+  application:
+    # 微服务名称
+    name: ms-eureka
+
+eureka:
+  client:
+    serviceUrl:
+      # Eureka微服务治理中心相互注册
+      defaultZone: http://localhost:1001/eureka,http://localhost:1002/eureka

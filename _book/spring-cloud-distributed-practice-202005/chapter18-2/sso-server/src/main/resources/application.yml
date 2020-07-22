@@ -1,0 +1,10 @@
+spring:
+  application:
+  # Spring应用名称
+    name: auth
+server:
+  servlet:
+    # Spring MVC 拦截路径
+    context-path: /auth
+  # 启动端口
+  port: 3001

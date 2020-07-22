@@ -1,0 +1,26 @@
+security:
+  oauth2:
+    client:
+      # SSO客户端ID
+      clientId: client1
+      # 客户端阴匙
+      clientSecret: client1-secrect
+      # 用户认证URI
+      user-authorization-uri: http://localhost:3001/auth/oauth/authorize
+      # 获取访问Token的URI
+      access-token-uri: http://localhost:3001/auth/oauth/token
+      # 注册跳转URI
+      registered-redirect-uri: http://localhost:7001/client1/login
+    resource:
+      jwt:
+        # 获取JWT阴匙URI
+        key-uri: http://localhost:3001/auth/oauth/token_key
+server:
+  servlet:
+    # Spring MVC拦截路径
+    context-path: /client1
+  port: 7001
+spring:
+  application:
+    # Spring应用名称
+    name: client1

@@ -1,0 +1,104 @@
+
+spring:
+  application:
+    name: ms-zuul
+  # 缓存管理器配置配置
+  cache:
+    # 类型
+    type: redis
+    # 缓存名称
+    cache-names: redis-cache
+    redis:
+      # 超时时间
+      time-to-live: 30m
+  redis:
+    # Redis服务器地址
+    host: 192.168.224.138
+    # Redis密码
+    password: 123456
+    # Jedis客户端
+    jedis:
+      # 连接池配置
+      pool:
+        # 最大活动连接数
+        max-active: 20
+        # 最大等待时间（单位毫秒）
+        max-wait: 2000
+        # 最小闲置连接数
+        min-idle: 5
+        # 最大闲置连接数
+        max-idle: 15
+  # 数据库配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/sc_chapter20_user
+    password: 123456
+    username: root
+    driver-class-name: com.mysql.jdbc.Driver
+  sleuth:
+    sampler: # 样本配置
+      # 百分比，默认为0.1
+      probability: 1.0
+      # 速率，每秒30次追踪
+      # rate: 30
+  zipkin:
+    base-url: http://localhost:9001
+
+# MyBatis配置
+mybatis:
+  # 映射文件路径
+  mapper-locations: classpath:/mybatis/*
+  # 扫描别名
+  type-aliases-package: com.spring.cloud.ms.zuul.pojo
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka,http://localhost:1002/eureka
+
+server:
+  # 端口
+  port: 2001
+
+secret:
+  key: ms-secret-key
+
+# Zuul的配置
+zuul:
+  # 路由配置
+  routes:
+    # 路由到微服务
+    client1-service:
+      # 请求拦截路径配置（使用ANT风格）
+      path: /product-api/**
+      # 配置具体的微服务
+      service-id: ms-product
+    client2-service:
+      # 请求拦截路径配置（使用ANT风格）
+      path: /fund-api/**
+      # 配置具体的微服务
+      service-id: ms-fund
+
+resilience4j:
+  # 限速器
+  ratelimiter:
+    # 配置限速器，配置的限速器会注册到限速器注册机（RateLimiterRegistry）中
+    limiters:
+      # 名称为“common”的限速器
+      common:
+        # 时间戳内限制通过的请求数，默认50
+        limitForPeriod: 2000
+        # 配置时间戳（单位毫秒），默认值为500纳秒。
+        limitRefreshPeriodInMillis: 1000
+        # 超时时间（单位毫秒）
+        timeoutInMillis: 200
+        # 是否注册监控指标
+        registerHealthIndicator: true
+        # 事件消费环形数组位数
+        eventConsumerBufferSize: 100
+
+# Actuator端点暴露
+management:
+  endpoints:
+    web:
+      exposure:
+        # 配置Actuator暴露那些端点  ②
+        include: '*'
