@@ -7,6 +7,15 @@ import java.io.Serializable;
  */
 public class UserDTO implements Serializable {
 
+    @Override
+    public String toString() {
+        return "UserDTO{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", gender=" + gender +
+                '}';
+    }
+
     /**
      * 用户编号
      */

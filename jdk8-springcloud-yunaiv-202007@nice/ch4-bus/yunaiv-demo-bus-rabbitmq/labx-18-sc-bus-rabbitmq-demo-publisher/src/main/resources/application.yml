@@ -4,10 +4,10 @@ spring:
 
   # RabbitMQ 相关配置项
   rabbitmq:
-    host: localhost
+    host: example.com
     port: 5672
-    username: guest
-    password: guest
+    username: admin
+    password: 123456
 
   # Bus 相关配置项，对应 BusProperties
   cloud:
