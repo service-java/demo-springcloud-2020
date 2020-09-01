@@ -10,14 +10,14 @@ spring:
         driver-class-name: com.mysql.jdbc.Driver
         jdbc-url: jdbc:mysql://127.0.0.1:3306/lab18_orders_0?useSSL=false&useUnicode=true&characterEncoding=UTF-8
         username: root
-        password:
+        password: 123456
       # 订单 orders 数据源配置 01
       ds-orders-1:
         type: com.zaxxer.hikari.HikariDataSource # 使用 Hikari 数据库连接池
         driver-class-name: com.mysql.jdbc.Driver
         jdbc-url: jdbc:mysql://127.0.0.1:3306/lab18_orders_1?useSSL=false&useUnicode=true&characterEncoding=UTF-8
         username: root
-        password:
+        password: 123456
     # 分片规则
     sharding:
       tables:

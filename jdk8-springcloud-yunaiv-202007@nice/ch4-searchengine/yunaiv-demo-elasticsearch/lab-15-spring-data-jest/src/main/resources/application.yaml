@@ -2,4 +2,4 @@ spring:
   data:
     # Jest 配置项
     jest:
-      uri: http://127.0.0.1:9200
+      uri: http://example.com:9200
