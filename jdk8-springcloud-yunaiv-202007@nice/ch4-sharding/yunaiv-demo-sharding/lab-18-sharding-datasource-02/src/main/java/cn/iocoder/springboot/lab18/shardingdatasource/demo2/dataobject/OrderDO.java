@@ -1,4 +1,4 @@
-package cn.iocoder.springboot.lab18.shardingdatasource.dataobject;
+package cn.iocoder.springboot.lab18.shardingdatasource.demo2.dataobject;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 

@@ -1,7 +1,7 @@
-package cn.iocoder.springboot.lab18.shardingdatasource.mapper;
+package cn.iocoder.springboot.lab18.shardingdatasource.demo2.mapper;
 
-import cn.iocoder.springboot.lab18.shardingdatasource.Application;
-import cn.iocoder.springboot.lab18.shardingdatasource.dataobject.OrderDO;
+import cn.iocoder.springboot.lab18.shardingdatasource.demo2.Application;
+import cn.iocoder.springboot.lab18.shardingdatasource.demo2.dataobject.OrderDO;
 import org.apache.shardingsphere.api.hint.HintManager;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,6 +1,6 @@
-package cn.iocoder.springboot.lab18.shardingdatasource.mapper;
+package cn.iocoder.springboot.lab18.shardingdatasource.demo2.mapper;
 
-import cn.iocoder.springboot.lab18.shardingdatasource.dataobject.OrderDO;
+import cn.iocoder.springboot.lab18.shardingdatasource.demo2.dataobject.OrderDO;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

@@ -1,7 +1,7 @@
-package cn.iocoder.springboot.lab18.shardingdatasource.service;
+package cn.iocoder.springboot.lab18.shardingdatasource.demo2.service;
 
-import cn.iocoder.springboot.lab18.shardingdatasource.dataobject.OrderDO;
-import cn.iocoder.springboot.lab18.shardingdatasource.mapper.OrderMapper;
+import cn.iocoder.springboot.lab18.shardingdatasource.demo2.dataobject.OrderDO;
+import cn.iocoder.springboot.lab18.shardingdatasource.demo2.mapper.OrderMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

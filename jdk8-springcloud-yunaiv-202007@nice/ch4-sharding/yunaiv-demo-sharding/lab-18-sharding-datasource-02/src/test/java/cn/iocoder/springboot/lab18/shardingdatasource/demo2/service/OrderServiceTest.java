@@ -1,7 +1,7 @@
-package cn.iocoder.springboot.lab18.shardingdatasource.service;
+package cn.iocoder.springboot.lab18.shardingdatasource.demo2.service;
 
-import cn.iocoder.springboot.lab18.shardingdatasource.Application;
-import cn.iocoder.springboot.lab18.shardingdatasource.dataobject.OrderDO;
+import cn.iocoder.springboot.lab18.shardingdatasource.demo2.Application;
+import cn.iocoder.springboot.lab18.shardingdatasource.demo2.dataobject.OrderDO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

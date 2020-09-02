@@ -2,6 +2,7 @@
 
 - spring cloud学习
 - 基于 https://github.com/YunaiV/SpringBoot-Labs 修改
+- 使用SwitchHosts映射(example.com), 尽量不要使用本地服务
 
 # 常见问题 @faq
 
