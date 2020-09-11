@@ -8,6 +8,7 @@
 
     <artifactId>lab-04-rabbitmq</artifactId>
     <packaging>pom</packaging>
+
     <modules>
         <module>lab-04-rabbitmq-native</module>
         <module>lab-04-rabbitmq-demo</module>
