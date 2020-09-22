@@ -46,7 +46,7 @@ public class UserController {
     public ResponseVO getUserInfo(@PathVariable("username") String username){
         //参数判读省略
         User user=  userService.getUserInfo(username);
-        return ResponseVO.onSuc(user);
+        return ResponseVO.onSuccess(user);
     }
 
 //    @Autowired

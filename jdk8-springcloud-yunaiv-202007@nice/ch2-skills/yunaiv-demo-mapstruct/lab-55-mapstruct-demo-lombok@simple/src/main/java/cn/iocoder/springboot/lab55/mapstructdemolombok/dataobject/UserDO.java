@@ -1,4 +1,4 @@
-package cn.iocoder.springboot.lab55.mapstructdemo.dataobject;
+package cn.iocoder.springboot.lab55.mapstructdemolombok.dataobject;
 
 
 import lombok.Data;

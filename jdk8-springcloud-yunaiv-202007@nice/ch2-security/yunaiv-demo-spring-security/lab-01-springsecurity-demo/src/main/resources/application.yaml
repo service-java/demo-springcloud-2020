@@ -6,3 +6,6 @@ spring:
       name: user # 账号
       password: user # 密码
       roles: ADMIN # 拥有角色
+
+server:
+  port: 9098

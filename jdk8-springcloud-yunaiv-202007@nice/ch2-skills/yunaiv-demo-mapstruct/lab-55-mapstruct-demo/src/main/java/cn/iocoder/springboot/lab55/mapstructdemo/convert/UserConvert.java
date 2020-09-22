@@ -1,6 +1,7 @@
 package cn.iocoder.springboot.lab55.mapstructdemo.convert;
 
 import cn.iocoder.springboot.lab55.mapstructdemo.bo.UserBO;
+import cn.iocoder.springboot.lab55.mapstructdemo.dataobject.UserDO;
 import cn.iocoder.springboot.lab55.mapstructdemo.bo.UserDetailBO;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

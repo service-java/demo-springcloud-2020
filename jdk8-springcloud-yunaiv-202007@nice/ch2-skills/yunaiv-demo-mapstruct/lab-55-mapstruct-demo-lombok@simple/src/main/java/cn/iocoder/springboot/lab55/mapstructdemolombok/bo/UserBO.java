@@ -1,4 +1,4 @@
-package cn.iocoder.springboot.lab55.mapstructdemo.bo;
+package cn.iocoder.springboot.lab55.mapstructdemolombok.bo;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

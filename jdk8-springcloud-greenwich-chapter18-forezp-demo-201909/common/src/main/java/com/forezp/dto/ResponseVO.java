@@ -4,12 +4,11 @@ import java.io.Serializable;
 
 public class ResponseVO<T> implements Serializable{
 
-
     public int code = 0;
     public String error = "";
     public T data;
 
-    public static ResponseVO onSuc(Object data) {
+    public static ResponseVO onSuccess(Object data) {
         ResponseVO resp = new ResponseVO();
         resp.data = data;
         return resp;

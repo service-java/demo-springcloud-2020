@@ -1,8 +1,8 @@
-package cn.iocoder.springboot.lab55.mapstructdemo;
+package cn.iocoder.springboot.lab55.mapstructdemolombok;
 
-import cn.iocoder.springboot.lab55.mapstructdemo.bo.UserBO;
-import cn.iocoder.springboot.lab55.mapstructdemo.convert.UserConvert;
-import cn.iocoder.springboot.lab55.mapstructdemo.dataobject.UserDO;
+import cn.iocoder.springboot.lab55.mapstructdemolombok.bo.UserBO;
+import cn.iocoder.springboot.lab55.mapstructdemolombok.convert.UserConvert;
+import cn.iocoder.springboot.lab55.mapstructdemolombok.dataobject.UserDO;
 
 public class UserBOTest {
 
@@ -10,6 +10,7 @@ public class UserBOTest {
         // 创建 UserDO 对象
         UserDO userDO = new UserDO()
                 .setId(1).setUsername("yudaoyuanma").setPassword("buzhidao");
+
         // 进行转换
         UserBO userBO = UserConvert.INSTANCE.convert(userDO);
         System.out.println(userBO.getId());

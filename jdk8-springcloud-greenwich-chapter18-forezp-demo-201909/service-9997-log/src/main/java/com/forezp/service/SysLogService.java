@@ -1,6 +1,6 @@
 package com.forezp.service;
 
-import com.forezp.dao.SysLogDAO;
+import com.forezp.dao.SysLogDao;
 import com.forezp.entity.SysLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,9 +12,9 @@ import org.springframework.stereotype.Service;
 public class SysLogService {
 
     @Autowired
-    SysLogDAO sysLogDAO;
+    SysLogDao sysLogDao;
 
     public void saveLogger(SysLog sysLog){
-        sysLogDAO.save(sysLog);
+        sysLogDao.save(sysLog);
     }
 }

@@ -31,7 +31,7 @@ public class BlogController {
     public ResponseVO postBlog(@RequestBody Blog blog){
         //字段判读省略
        Blog blog1= blogService.postBlog(blog);
-       return ResponseVO.onSuc(blog1);
+       return ResponseVO.onSuccess(blog1);
     }
 
     @ApiOperation(value = "根据用户id获取所有的blog", notes = "根据用户id获取所有的blog")
@@ -42,7 +42,7 @@ public class BlogController {
         //字段判读省略
         if(UserUtils.isMyself(username)) {
             List<Blog> blogs = blogService.findBlogs(username);
-            return ResponseVO.onSuc(blogs);
+            return ResponseVO.onSuccess(blogs);
         }else {
             throw new CommonException(ErrorCode.TOKEN_IS_NOT_MATCH_USER);
         }
@@ -53,6 +53,6 @@ public class BlogController {
     @GetMapping("/{id}/detail")
     @SysLogger("getBlogDetail")
     public ResponseVO getBlogDetail(@PathVariable Long id){
-        return ResponseVO.onSuc(blogService.findBlogDetail(id));
+        return ResponseVO.onSuccess(blogService.findBlogDetail(id));
     }
 }

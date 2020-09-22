@@ -47,6 +47,6 @@ public class UserService {
         LoginDTO loginDTO=new LoginDTO();
         loginDTO.setUser(user);
         loginDTO.setToken(jwt.getAccess_token());
-        return ResponseVO.onSuc(loginDTO);
+        return ResponseVO.onSuccess(loginDTO);
     }
 }
