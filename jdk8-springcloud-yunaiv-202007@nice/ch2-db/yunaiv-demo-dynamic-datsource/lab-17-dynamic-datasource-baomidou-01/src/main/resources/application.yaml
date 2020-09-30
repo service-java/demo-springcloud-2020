@@ -6,13 +6,13 @@ spring:
       datasource:
         # 订单 orders 数据源配置
         orders:
-          url: jdbc:mysql://127.0.0.1:3306/test_orders?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+          url: jdbc:mysql://example.com:3306/test_orders?useSSL=false&useUnicode=true&characterEncoding=UTF-8
           driver-class-name: com.mysql.jdbc.Driver
           username: root
           password:
         # 用户 users 数据源配置
         users:
-          url: jdbc:mysql://127.0.0.1:3306/test_users?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+          url: jdbc:mysql://example.com:3306/test_users?useSSL=false&useUnicode=true&characterEncoding=UTF-8
           driver-class-name: com.mysql.jdbc.Driver
           username: root
           password:

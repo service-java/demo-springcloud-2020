@@ -8,14 +8,14 @@ spring:
       ds-orders:
         type: com.zaxxer.hikari.HikariDataSource # 使用 Hikari 数据库连接池
         driver-class-name: com.mysql.jdbc.Driver
-        jdbc-url: jdbc:mysql://127.0.0.1:3306/test_orders?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+        jdbc-url: jdbc:mysql://example.com:3306/test_orders?useSSL=false&useUnicode=true&characterEncoding=UTF-8
         username: root
         password:
       # 订单 users 数据源配置
       ds-users:
         type: com.zaxxer.hikari.HikariDataSource # 使用 Hikari 数据库连接池
         driver-class-name: com.mysql.jdbc.Driver
-        jdbc-url: jdbc:mysql://127.0.0.1:3306/test_users?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+        jdbc-url: jdbc:mysql://example.com:3306/test_users?useSSL=false&useUnicode=true&characterEncoding=UTF-8
         username: root
         password:
     # 分片规则
