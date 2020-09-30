@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Cloud/Apollo/?github>
+<http://www.iocoder.cn/Spring-Cloud/Apollo>

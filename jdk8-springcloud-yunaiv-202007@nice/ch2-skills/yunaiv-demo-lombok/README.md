@@ -1,3 +1,3 @@
 # README
 
-- <http://www.iocoder.cn/Spring-Boot/Lombok/?github>
+- <http://www.iocoder.cn/Spring-Boot/Lombok>

@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Boot/CAT/?github>
+<http://www.iocoder.cn/Spring-Boot/CAT>

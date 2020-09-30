@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Boot/Motan/?github>
+<http://www.iocoder.cn/Spring-Boot/Motan>

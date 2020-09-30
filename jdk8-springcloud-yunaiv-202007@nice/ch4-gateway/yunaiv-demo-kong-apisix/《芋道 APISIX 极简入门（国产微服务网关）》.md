@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/APISIX/install/?github>
+<http://www.iocoder.cn/APISIX/install>

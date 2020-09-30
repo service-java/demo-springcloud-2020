@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Cloud-Alibaba/Sentinel/?github>
+<http://www.iocoder.cn/Spring-Cloud-Alibaba/Sentinel>

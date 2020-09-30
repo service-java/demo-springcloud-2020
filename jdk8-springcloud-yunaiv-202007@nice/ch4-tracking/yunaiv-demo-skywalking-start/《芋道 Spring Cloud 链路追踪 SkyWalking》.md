@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Cloud/SkyWalking/?githubs>
+<http://www.iocoder.cn/Spring-Cloud/SkyWalkings>

@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Boot/config-file/?github>
+<http://www.iocoder.cn/Spring-Boot/config-file>

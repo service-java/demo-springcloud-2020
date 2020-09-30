@@ -1,7 +1,7 @@
 # README
 
 - 芋道 Spring Boot 消息队列 RabbitMQ 入门
-    - <http://www.iocoder.cn/Spring-Boot/RabbitMQ/?github>
+    - <http://www.iocoder.cn/Spring-Boot/RabbitMQ>
     - http://www.iocoder.cn/RabbitMQ/install/
     - http://www.iocoder.cn/RabbitMQ/yuliu/doc/
     - https://mvnrepository.com/artifact/org.springframework.amqp/spring-amqp

@@ -1,3 +1,3 @@
 # README
 
-- <http://www.iocoder.cn/Spring-Boot/gRPC/?github>
+- <http://www.iocoder.cn/Spring-Boot/gRPC>

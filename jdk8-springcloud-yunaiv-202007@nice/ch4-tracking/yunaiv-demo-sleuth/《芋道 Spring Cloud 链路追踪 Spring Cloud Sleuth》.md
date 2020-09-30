@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Cloud/Spring-Cloud-Sleuth/?github>
+<http://www.iocoder.cn/Spring-Cloud/Spring-Cloud-Sleuth>

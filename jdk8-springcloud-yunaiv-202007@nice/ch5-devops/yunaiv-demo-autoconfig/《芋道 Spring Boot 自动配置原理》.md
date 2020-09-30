@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Boot/autoconfigure/?github>
+<http://www.iocoder.cn/Spring-Boot/autoconfigure>

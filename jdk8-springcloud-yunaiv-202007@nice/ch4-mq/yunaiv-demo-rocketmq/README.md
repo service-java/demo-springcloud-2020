@@ -1,8 +1,8 @@
 # README
 
 - 芋道 Spring Boot 消息队列 RocketMQ 入门
-    - <http://www.iocoder.cn/Spring-Boot/RocketMQ/?github>
-    - http://www.iocoder.cn/RocketMQ/install/?self
+    - <http://www.iocoder.cn/Spring-Boot/RocketMQ>
+    - http://www.iocoder.cn/RocketMQ/install
     - https://spring.io/projects/spring-amqp
     - https://docs.spring.io/spring-boot/docs/1.2.2.RELEASE/reference/html/boot-features-messaging.html
 

@@ -1,7 +1,7 @@
 # README
 
 - 芋道 Spring Boot Elasticsearch 入门
-    - <http://www.iocoder.cn/Spring-Boot/Elasticsearch/?github>
+    - <http://www.iocoder.cn/Spring-Boot/Elasticsearch>
 
 
 # 常见问题 @faq

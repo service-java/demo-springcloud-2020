@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Cloud/Kafka/?github>
+<http://www.iocoder.cn/Spring-Cloud/Kafka>

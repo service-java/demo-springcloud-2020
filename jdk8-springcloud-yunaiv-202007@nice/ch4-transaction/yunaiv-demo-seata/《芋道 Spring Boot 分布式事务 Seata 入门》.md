@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Boot/Seata/?github>
+<http://www.iocoder.cn/Spring-Boot/Seata>

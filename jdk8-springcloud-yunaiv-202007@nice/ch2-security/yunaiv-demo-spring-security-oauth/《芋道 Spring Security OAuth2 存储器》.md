@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Security/OAuth2-learning-store/?github>
+<http://www.iocoder.cn/Spring-Security/OAuth2-learning-store>

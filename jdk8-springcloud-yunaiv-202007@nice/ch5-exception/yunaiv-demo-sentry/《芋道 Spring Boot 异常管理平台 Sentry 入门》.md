@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Boot/Sentry/?github>
+<http://www.iocoder.cn/Spring-Boot/Sentry>

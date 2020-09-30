@@ -1,7 +1,7 @@
 # README
 
 - 芋道 Spring Boot 分库分表入门
-    - <http://www.iocoder.cn/Spring-Boot/sharding-datasource/?github>
+    - <http://www.iocoder.cn/Spring-Boot/sharding-datasource>
 
 ```
 尽可能查询的时候，带有片键（分库分表字段）

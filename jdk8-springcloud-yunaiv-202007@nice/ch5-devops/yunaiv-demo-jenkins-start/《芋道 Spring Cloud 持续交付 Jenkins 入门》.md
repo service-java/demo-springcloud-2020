@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Cloud/Jenkins/?github>
+<http://www.iocoder.cn/Spring-Cloud/Jenkins>

@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Boot/Zipkin/?github>
+<http://www.iocoder.cn/Spring-Boot/Zipkin>

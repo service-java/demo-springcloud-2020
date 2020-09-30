@@ -1,7 +1,7 @@
 # README
 
 - 芋道 Spring Boot 安全框架 Spring Security 入门
-    - <http://www.iocoder.cn/Spring-Boot/Spring-Security/?github>
+    - <http://www.iocoder.cn/Spring-Boot/Spring-Security>
 
 ```java
 spring-boot-starter-security

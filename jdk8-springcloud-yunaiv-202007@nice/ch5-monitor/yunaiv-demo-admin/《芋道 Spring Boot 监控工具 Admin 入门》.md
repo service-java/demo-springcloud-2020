@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Boot/Admin/?github>
+<http://www.iocoder.cn/Spring-Boot/Admin>

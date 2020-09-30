@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Dubbo/Seata/?github>
+<http://www.iocoder.cn/Dubbo/Seata>

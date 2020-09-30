@@ -1,6 +1,6 @@
 # README
 
-- <http://www.iocoder.cn/Spring-Boot/Feign/?github>
+- <http://www.iocoder.cn/Spring-Boot/Feign>
 
 # 操作
 

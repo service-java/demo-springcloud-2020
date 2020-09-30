@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Soul/install/?github>
+<http://www.iocoder.cn/Soul/install>

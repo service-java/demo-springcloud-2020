@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Boot/ActiveMQ/?github>
+<http://www.iocoder.cn/Spring-Boot/ActiveMQ>

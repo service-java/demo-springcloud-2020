@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Boot/Async-Job/?github>
+<http://www.iocoder.cn/Spring-Boot/Async-Job>

@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Cloud-Alibaba/Bus-RocketMQ/?github>
+<http://www.iocoder.cn/Spring-Cloud-Alibaba/Bus-RocketMQ>

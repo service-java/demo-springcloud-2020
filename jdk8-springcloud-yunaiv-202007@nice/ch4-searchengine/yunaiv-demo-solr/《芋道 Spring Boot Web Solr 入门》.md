@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Boot/Solr/?github>
+<http://www.iocoder.cn/Spring-Boot/Solr>

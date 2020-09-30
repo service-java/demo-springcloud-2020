@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Cloud/Spring-Cloud-Config/?github>
+<http://www.iocoder.cn/Spring-Cloud/Spring-Cloud-Config>

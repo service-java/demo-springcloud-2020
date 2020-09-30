@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Cloud-Alibaba/Nacos-Config/?github>
+<http://www.iocoder.cn/Spring-Cloud-Alibaba/Nacos-Config>

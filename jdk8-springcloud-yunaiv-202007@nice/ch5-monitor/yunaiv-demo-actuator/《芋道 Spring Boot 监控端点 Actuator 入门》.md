@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Boot/Actuator/?github>
+<http://www.iocoder.cn/Spring-Boot/Actuator>

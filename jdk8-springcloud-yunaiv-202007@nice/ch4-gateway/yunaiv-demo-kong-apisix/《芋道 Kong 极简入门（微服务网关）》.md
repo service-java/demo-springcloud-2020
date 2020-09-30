@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Kong/install/?github>
+<http://www.iocoder.cn/Kong/install>

@@ -1,7 +1,7 @@
 # README
 
 - 芋道 Spring Boot SOFARPC 入门
-    - <http://www.iocoder.cn/Spring-Boot/SOFARPC/?github>
+    - <http://www.iocoder.cn/Spring-Boot/SOFARPC>
 
 ```
 SOFABolt 

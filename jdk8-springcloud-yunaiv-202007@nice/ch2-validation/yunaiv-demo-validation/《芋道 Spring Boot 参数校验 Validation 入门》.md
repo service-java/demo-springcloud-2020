@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Boot/Validation/?github>
+<http://www.iocoder.cn/Spring-Boot/Validation>

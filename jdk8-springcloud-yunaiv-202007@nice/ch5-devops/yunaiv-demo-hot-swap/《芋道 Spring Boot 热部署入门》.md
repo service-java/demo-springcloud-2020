@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Boot/hot-swap/?github>
+<http://www.iocoder.cn/Spring-Boot/hot-swap>

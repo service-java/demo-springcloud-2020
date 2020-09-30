@@ -1,1 +1,1 @@
-<http://www.iocoder.cn/Spring-Cloud/SB-Admin/?github>
+<http://www.iocoder.cn/Spring-Cloud/SB-Admin>
