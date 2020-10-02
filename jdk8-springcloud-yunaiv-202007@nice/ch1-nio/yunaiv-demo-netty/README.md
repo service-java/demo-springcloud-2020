@@ -60,5 +60,64 @@ Protobuf
 只有在读取到足够长度的消息之后才算是读到了一个完整的消息
 
 ===
-InvocationEncoder
+InvocationEncoder --> 将 Invocation 序列化，并写入到 TCP Socket 中
+InvocationDecoder --> 实现从 TCP Socket 读取字节数组，反序列化成 Invocation
+
+===
+Message
+认证+聊天+心跳
+
+NettyServerConfig与NettyClientConfig配置
+1) MessageHandlerContainer
+2) MessageDispatcher
+
+===
+// 断开重连
+定时重连
+
+测试如下
+启动 Netty Client，不要启动 Netty Server --> 不断发起定时重连
+
+===
+// 心跳机制与空闲检测
+TCP 自带的空闲检测机制默认是 2 小时
+
+业务实现逻辑
+服务端发现 180 秒未从客户端读取到消息，主动断开连接
+客户端发现 180 秒未从服务端读取到消息，主动断开连接
+
+心跳机制
+客户端每 60 秒向服务端发起一次心跳消息，保证服务端可以读取到消息
+服务端在收到心跳消息时，回复客户端一条确认消息，保证客户端可以读取到消息
+
+ReadTimeoutHandler
+
+测试如下
+启动 Netty Server 服务端，再启动 Netty Client 客户端，耐心等待 60 秒后，可以看到心跳日志
+
+===
+// 认证逻辑
+AuthRequest
+AuthRequestHandler
+AuthResponse
+AuthResponseHandler
+
+测试如下
+Postman 模拟一次认证请求
+http://127.0.0.1:8080/test/mock
+
+===
+// 单聊逻辑
+ChatSendToOneRequest
+ChatSendToOneHandler
+
+ChatSendResponse
+ChatSendResponseHandler
+
+ChatRedirectToUserRequest 转发消息给一个用户的请求
+ChatRedirectToUserRequestHandler
+
+===
+// 群聊逻辑
+ChatSendToAllRequest
 ```
