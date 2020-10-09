@@ -1,10 +1,10 @@
 spring:
   # datasource 数据源配置内容
   datasource:
-    url: jdbc:mysql://example.com:3306/lab-21-cache-demo?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://example.com:3306/yuaniv_demo?useSSL=false&useUnicode=true&characterEncoding=UTF-8
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password:
+    password: 不想被人知道的密码
 
 # mybatis-plus 配置内容
 mybatis-plus:

@@ -49,8 +49,11 @@ public class TransactionTest {
         stringRedisTemplate.setEnableTransactionSupport(true);
 
 
-        stringRedisTemplate.opsForValue().get("user:1");
-        stringRedisTemplate.opsForValue().get("user:2");
+        String s = stringRedisTemplate.opsForValue().get("user:1");
+        String s1 = stringRedisTemplate.opsForValue().get("user:2");
+        System.out.println(s);
+        System.out.println(s1);
+
     }
 
 }
