@@ -30,7 +30,7 @@ public class ScriptTest {
         RedisScript<Long> script = new DefaultRedisScript<>(scriptContents, Long.class);
         // 执行 LUA 脚本
         Long result = stringRedisTemplate.execute(script, Collections.singletonList("yunai:1"), "shuai02", "shuai");
-        System.out.println(result);
+        System.out.println(result); // 0表示失败 1表示成功
     }
 
     @Test

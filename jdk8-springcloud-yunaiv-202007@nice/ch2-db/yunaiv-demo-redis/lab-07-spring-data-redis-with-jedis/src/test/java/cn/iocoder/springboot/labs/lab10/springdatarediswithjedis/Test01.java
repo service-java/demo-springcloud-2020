@@ -49,6 +49,7 @@ public class Test01 {
         String key = String.format("user:%d", 1);
         Object value = redisTemplate.opsForValue().get(key);
         System.out.println(value);
+        // 输出 --> UserCacheObject{id=1, name='芋道源码', gender=1}
     }
 
 }

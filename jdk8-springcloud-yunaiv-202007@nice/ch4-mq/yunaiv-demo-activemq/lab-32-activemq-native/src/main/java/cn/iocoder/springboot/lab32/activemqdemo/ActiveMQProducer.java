@@ -6,7 +6,7 @@ import javax.jms.*; // 使用 JMS API
 
 public class ActiveMQProducer {
 
-    private static final String BROKER_URL = "tcp://127.0.0.1:61616";
+    private static final String BROKER_URL = "tcp://example.com:61616";
     private static final String USERNAME = "admin";
     private static final String PASSWORD = "admin";
 

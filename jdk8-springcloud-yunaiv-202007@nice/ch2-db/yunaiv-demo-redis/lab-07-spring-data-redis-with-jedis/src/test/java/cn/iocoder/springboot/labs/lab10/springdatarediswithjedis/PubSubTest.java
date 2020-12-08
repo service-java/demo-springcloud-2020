@@ -18,9 +18,28 @@ public class PubSubTest {
 
     @Test
     public void test01() throws InterruptedException {
+        // @tip 需要再config里开启listener
         for (int i = 0; i < 3; i++) {
             stringRedisTemplate.convertAndSend(TOPIC, "yunai:" + i);
             Thread.sleep(1000L);
+
+/*
+输出结果:
+收到 ChannelTopic 消息：
+线程编号：listenerContainer-2
+message：yunai:0
+pattern：TEST
+收到 ChannelTopic 消息：
+线程编号：listenerContainer-3
+message：yunai:1
+pattern：TEST
+收到 ChannelTopic 消息：
+线程编号：listenerContainer-4
+message：yunai:2
+pattern：TEST
+*/
+
+
         }
     }
 
