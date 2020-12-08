@@ -15,7 +15,9 @@ import org.springframework.data.mongodb.core.mapping.MongoMappingContext;
 @Configuration
 public class MongoDBConfig {
 
-    @Bean // 目的，就是为了移除 _class field 。参考博客 https://blog.csdn.net/bigtree_3721/article/details/82787411
+    // 目的，就是为了移除 _class field
+    // https://blog.csdn.net/bigtree_3721/article/details/82787411
+    @Bean
     public MappingMongoConverter mappingMongoConverter(MongoDbFactory factory,
                                                        MongoMappingContext context,
                                                        BeanFactory beanFactory) {

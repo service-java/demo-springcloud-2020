@@ -13,6 +13,7 @@ public interface UserRepository03 extends MongoRepository<UserDO, Integer> {
         UserDO probe = new UserDO();
         probe.setUsername(username); // 精准匹配 username 查询
         Example<UserDO> example = Example.of(probe);
+
         // 执行查询
         return findOne(example)
                 .orElse(null); // 如果为空，则返回 null
@@ -26,6 +27,7 @@ public interface UserRepository03 extends MongoRepository<UserDO, Integer> {
         ExampleMatcher matcher = ExampleMatcher.matching()
                 .withMatcher("username", ExampleMatcher.GenericPropertyMatchers.contains()); // 模糊匹配 username 查询
         Example<UserDO> example = Example.of(probe, matcher);
+
         // 执行查询
         return findOne(example)
                 .orElse(null); // 如果为空，则返回 null

@@ -44,6 +44,7 @@ public class UserRepositoryTest {
         // 查询用户
         Optional<UserDO> userResult = userRepository.findById(1);
         Assert.isTrue(userResult.isPresent(), "用户一定要存在");
+
         // 更新
         UserDO updateUser = userResult.get();
         updateUser.setUsername("yutou");

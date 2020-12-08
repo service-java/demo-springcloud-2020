@@ -30,19 +30,19 @@ public class UserServiceTest {
     @Test
     public void testAdd() {
         UserAddDTO addDTO = new UserAddDTO();
-        userService.add(addDTO);
+        userService.add(addDTO); //  add.addDTO.password: 密码不能为空, add.addDTO.username: 登陆账号不能为空
     }
 
     @Test
     public void testAdd01() {
         UserAddDTO addDTO = new UserAddDTO();
-        userService.add01(addDTO);
+        userService.add01(addDTO); // 正常通过??
     }
 
     @Test
     public void testAdd02() {
         UserAddDTO addDTO = new UserAddDTO();
-        userService.add02(addDTO);
+        userService.add02(addDTO); // Cannot find current proxy: Set 'exposeProxy' property on Advised to 'true' to make it available
     }
 
     @Test
@@ -59,6 +59,14 @@ public class UserServiceTest {
             // 属性:消息
             System.out.println(constraintViolation.getPropertyPath() + ":" + constraintViolation.getMessage());
         }
+
+/*
+输出结果
+
+password:密码不能为空
+username:登陆账号不能为空
+*/
+
     }
 
 }

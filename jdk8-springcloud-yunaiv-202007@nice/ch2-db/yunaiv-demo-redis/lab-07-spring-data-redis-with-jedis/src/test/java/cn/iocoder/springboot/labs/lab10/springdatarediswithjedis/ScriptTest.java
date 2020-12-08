@@ -29,8 +29,8 @@ public class ScriptTest {
         // 创建 RedisScript 对象
         RedisScript<Long> script = new DefaultRedisScript<>(scriptContents, Long.class);
         // 执行 LUA 脚本
-        Long result = stringRedisTemplate.execute(script, Collections.singletonList("yunai:1"), "shuai02", "shuai");
-        System.out.println(result); // 0表示失败 1表示成功
+        Long result = stringRedisTemplate.execute(script, Collections.singletonList("shuai02"), "shuai02", "shuai");
+        System.out.println(result); // 0表示失败 1表示成功??
     }
 
     @Test
@@ -41,7 +41,7 @@ public class ScriptTest {
         RedisScript<List> script = new DefaultRedisScript<>(scriptContents, List.class);
 
         List<Object> result = stringRedisTemplate.execute(script, Arrays.asList("key1", "key2"), "first", "second");
-        System.out.println(result);
+        System.out.println(result); // [key1, key2, first, second]
     }
 
 }

@@ -39,7 +39,8 @@ public class RedisConfiguration {
 //        jackson2JsonRedisSerializer.setObjectMapper(objectMapper);
 //        template.setValueSerializer(jackson2JsonRedisSerializer);
 
-//    @Bean // PUB/SUB 使用的 Bean ，需要时打开。
+    // PUB/SUB 使用的 Bean ，需要时打开
+    @Bean
     public RedisMessageListenerContainer listenerContainer(RedisConnectionFactory factory) {
         // 创建 RedisMessageListenerContainer 对象
         RedisMessageListenerContainer container = new RedisMessageListenerContainer();

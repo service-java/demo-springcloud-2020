@@ -36,7 +36,7 @@ Spring OXM
 ===
 Cache Object + DO + dao + service
 
-JSONUtil.parseObject(value, UserCacheObject.class)
+JSONUtil.parseObject(operations.get(buildKey(id)), UserCacheObject.class)
 operations.set(buildKey(id), JSONUtil.toJSONString(object));
 
 ===
@@ -57,7 +57,7 @@ RedisMessageListenerContainer 是基于一次 SUBSCRIBE 或 PSUBSCRIBE 命令
 
 @demo Dubbo 使用 Redis 作为注册中心时，使用 Redis Pub/Sub 实现注册信息的同步
 
-Script
+Script + Lua
 
 ===
 Redisson
@@ -125,3 +125,11 @@ threads: 0
 nettyThreads: 0
 codec: !<org.redisson.codec.JsonJacksonCodec> {}
 ```
+
+- redisson的示例里多了Lock和RateLimiter
+
+# 常见问题 @faq
+
+- more than one RedisConnectionFactory??
+- java.lang.IllegalStateException: Failed to retrieve PlatformTransactionManager for @Transactional test @todo
+    - https://www.coder.work/article/872032

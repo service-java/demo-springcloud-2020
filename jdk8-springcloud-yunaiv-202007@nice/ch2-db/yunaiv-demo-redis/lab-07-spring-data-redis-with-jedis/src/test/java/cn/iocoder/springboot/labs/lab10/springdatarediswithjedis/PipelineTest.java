@@ -38,6 +38,7 @@ public class PipelineTest {
 
         // 打印结果
         System.out.println(results);
+//   输出:     [true, true, true, shuai, shuai, shuai]
     }
 
 }

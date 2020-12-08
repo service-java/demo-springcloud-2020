@@ -33,6 +33,7 @@ public class LockTest {
                 lock.lock(10, TimeUnit.SECONDS);
             }
         }).start();
+
         // 简单 sleep 1 秒，保证线程 A 成功持有锁
         Thread.sleep(1000L);
 

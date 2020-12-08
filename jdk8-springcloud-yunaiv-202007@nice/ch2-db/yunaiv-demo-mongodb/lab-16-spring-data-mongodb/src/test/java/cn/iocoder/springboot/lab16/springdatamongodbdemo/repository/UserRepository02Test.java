@@ -19,17 +19,19 @@ public class UserRepository02Test {
     @Autowired
     private UserRepository02 userRepository;
 
-    @Test // 根据名字获得一条记录
+    @Test
+    // 根据名字获得一条记录
     public void testFindByName() {
         UserDO user = userRepository.findByUsername("yutou");
         System.out.println(user);
     }
 
-    @Test // 使用 username 模糊查询，分页返回结果
+    @Test
+    // 使用 username 模糊查询，分页返回结果
     public void testFindByNameLike() {
         // 创建排序条件
         Sort sort = new Sort(Sort.Direction.DESC, "id"); // ID 倒序
-        // 创建分页条件。
+        // 创建分页条件
         Pageable pageable = PageRequest.of(0, 10, sort);
         // 执行分页操作
         Page<UserDO> page = userRepository.findByUsernameLike("yu", pageable);

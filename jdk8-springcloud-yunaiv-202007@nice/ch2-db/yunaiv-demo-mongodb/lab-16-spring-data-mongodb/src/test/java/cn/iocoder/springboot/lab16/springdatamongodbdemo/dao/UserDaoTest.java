@@ -2,6 +2,7 @@ package cn.iocoder.springboot.lab16.springdatamongodbdemo.dao;
 
 import cn.iocoder.springboot.lab16.springdatamongodbdemo.Application;
 import cn.iocoder.springboot.lab16.springdatamongodbdemo.dataobject.UserDO;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,15 +24,19 @@ public class UserDaoTest {
     public void testInsert() {
         // 创建 UserDO 对象
         UserDO user = new UserDO();
-        user.setId(1); // 这里先临时写死一个 ID 编号，后面演示自增 ID 的时候，在修改这块
+
+        // @todo 这里先临时写死一个 ID 编号，后面演示自增 ID 的时候，在修改这块
+        user.setId(1);
         user.setUsername("yudaoyuanma");
         user.setPassword("buzhidao");
         user.setCreateTime(new Date());
+
         // 创建 Profile 对象
         UserDO.Profile profile = new UserDO.Profile();
         profile.setNickname("芋道源码");
         profile.setGender(1);
         user.setProfile(profile);
+
         // 存储到 DB
         userDao.insert(user);
     }
@@ -57,7 +62,8 @@ public class UserDaoTest {
     @Test // 根据 ID 编号，查询一条记录
     public void testSelectById() {
         UserDO userDO = userDao.findById(1);
-        System.out.println(userDO);
+
+        Assert.assertNull(userDO);
     }
 
     @Test // 根据 ID 编号数组，查询多条记录

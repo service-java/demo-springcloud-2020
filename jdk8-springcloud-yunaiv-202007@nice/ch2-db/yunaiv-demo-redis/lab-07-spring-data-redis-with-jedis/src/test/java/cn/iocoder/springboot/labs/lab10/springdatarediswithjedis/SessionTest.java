@@ -17,6 +17,9 @@ public class SessionTest {
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
 
+    /**
+     * 基于Session执行Pipeline
+     */
     @Test
     public void test01() {
         String result = stringRedisTemplate.execute(new SessionCallback<String>() {

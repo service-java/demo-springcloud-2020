@@ -21,6 +21,7 @@ public class ProductRepositoryTest {
         // 创建 ProductDO 对象
         ProductDO product = new ProductDO();
         product.setName("芋头");
+
         // 插入
         productRepository.insert(product);
         // 打印 ID

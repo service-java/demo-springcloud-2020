@@ -1,11 +1,14 @@
 package cn.iocoder.springboot.labs.lab10.springdatarediswithjedis;
 
+import cn.iocoder.springboot.labs.lab10.springdatarediswithjedis.listener.TestChannelTopicMessageListener;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringRunner.class)
@@ -16,15 +19,19 @@ public class TransactionTest {
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
 
+    /**
+     * @todo 这里暂时会报错,
+     * java.lang.IllegalStateException: Failed to retrieve PlatformTransactionManager for @Transactional test
+     */
     @Test
     @Transactional
     public void test01() {
         // 这里是偷懒，没在 RedisConfiguration 配置类中，设置 stringRedisTemplate 开启事务。
-        stringRedisTemplate.setEnableTransactionSupport(true);
+         stringRedisTemplate.setEnableTransactionSupport(true);
 
         // 执行想要的操作
-        stringRedisTemplate.opsForValue().set("yunai:1", "shuai");
-        stringRedisTemplate.opsForValue().set("yudaoyuanma:1", "dai");
+        stringRedisTemplate.opsForValue().set("yunai:1", "帅气逼人");
+        stringRedisTemplate.opsForValue().set("yudaoyuanma:1", "真是够了");
 
 //        stringRedisTemplate.execute(new SessionCallback<String>() {
 //
