@@ -1,7 +1,7 @@
 # README
 
 - 芋道 Spring Boot Netty 入门
-    - <http://www.iocoder.cn/Spring-Boot/Netty>]
+    - <http://www.iocoder.cn/Spring-Boot/Netty>
     - http://www.iocoder.cn/Fight/Netty-to-solve-the-problem-of-sticky-and-unpacked-four-solutions
 
 ```
