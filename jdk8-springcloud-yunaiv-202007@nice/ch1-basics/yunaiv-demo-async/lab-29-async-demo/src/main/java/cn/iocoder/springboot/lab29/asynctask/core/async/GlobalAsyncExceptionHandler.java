@@ -14,6 +14,7 @@ public class GlobalAsyncExceptionHandler implements AsyncUncaughtExceptionHandle
 
     @Override
     public void handleUncaughtException(Throwable ex, Method method, Object... params) {
+        // 接入 ELK的话，就可以基于该异常日志进行告警
         logger.error("[handleUncaughtException][method({}) params({}) 发生异常]",
                 method, params, ex);
     }

@@ -5,10 +5,9 @@
 
 ```
 观察者模式
-
 用来实时事件处理系统
 
-发送邮件、发送优惠劵
+@eg 发送邮件、发送优惠劵
 
 ===
 观察者模式和发布订阅模式 @diff
@@ -34,8 +33,8 @@ ApplicationFailedEvent
 
 
 // 两种listener方式
-@EventListener
-implements ApplicationListener<UserRegisterEvent>
+1) @EventListener
+2) implements ApplicationListener<UserRegisterEvent>
 
 // 测试一番
 http://127.0.0.1:8080/demo/register?username=yudaoyuanma

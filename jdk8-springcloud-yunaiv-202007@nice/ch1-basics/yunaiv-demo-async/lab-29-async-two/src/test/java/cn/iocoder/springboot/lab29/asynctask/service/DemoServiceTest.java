@@ -19,7 +19,7 @@ public class DemoServiceTest {
         demoService.execute01();
         demoService.execute02();
 
-        // sleep 1 秒，保证异步调用的执行
+        // sleep 1 秒，保证异步调用的执行??
         Thread.sleep(1000);
     }
 

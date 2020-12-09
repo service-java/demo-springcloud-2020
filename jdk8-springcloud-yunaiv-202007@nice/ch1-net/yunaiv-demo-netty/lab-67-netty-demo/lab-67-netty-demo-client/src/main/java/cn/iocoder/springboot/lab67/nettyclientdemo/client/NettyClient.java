@@ -38,6 +38,7 @@ public class NettyClient {
      * 线程组，用于客户端对服务端的链接、数据读写
      */
     private EventLoopGroup eventGroup = new NioEventLoopGroup();
+
     /**
      * Netty Client Channel
      */

@@ -1,8 +1,0 @@
-server:
-  port: 8766
-security.basic.enabled: false
-turbine:
-  aggregator:
-    clusterConfig: default
-  appConfig: user-service , account-service
-  clusterNameExpression: new String("default")
