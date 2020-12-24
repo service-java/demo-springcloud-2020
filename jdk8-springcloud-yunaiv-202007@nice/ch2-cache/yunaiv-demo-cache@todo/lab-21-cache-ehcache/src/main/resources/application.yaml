@@ -4,7 +4,7 @@ spring:
     url: jdbc:mysql://example.com:3306/yuaniv_demo?useSSL=false&useUnicode=true&characterEncoding=UTF-8
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password: 不想被人知道的密码
+    password: 潜龙勿用
   # cache 缓存配置内容
   cache:
     type: ehcache
