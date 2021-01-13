@@ -6,7 +6,7 @@
         id, pay_timeout
     </sql>
 
-    <select id="selectById" parameterType="Integer" resultType="OrderConfigDO">
+    <select id="selectById" parameterType="Integer" resultType="cn.iocoder.springboot.lab18.shardingdatasource.demo2.dataobject.OrderConfigDO">
         SELECT
             <include refid="FIELDS" />
         FROM order_config

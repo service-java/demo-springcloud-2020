@@ -4,6 +4,8 @@
 - https://blog.csdn.net/qq_28379809/article/details/102734384
 
 ```
+没讲原理
+
 访问并进行登录
 http://localhost:8301/
 
@@ -14,5 +16,5 @@ eknown/123
 http://localhost:8301/securedPage
 
 访问直接点击登录
-http://localhost:8301
+http://localhost:8302/securedPage
 ```

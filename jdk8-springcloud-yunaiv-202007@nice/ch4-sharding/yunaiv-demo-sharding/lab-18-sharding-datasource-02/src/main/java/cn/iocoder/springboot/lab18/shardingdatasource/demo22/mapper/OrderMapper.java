@@ -1,6 +1,6 @@
-package cn.iocoder.springboot.lab18.shardingdatasource.demo2.mapper;
+package cn.iocoder.springboot.lab18.shardingdatasource.demo22.mapper;
 
-import cn.iocoder.springboot.lab18.shardingdatasource.demo2.dataobject.OrderDO;
+import cn.iocoder.springboot.lab18.shardingdatasource.demo22.dataobject.OrderDO;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.springframework.stereotype.Repository;
 
